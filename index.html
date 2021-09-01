@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <style>
+        .t1 {
+            font-family: 'Indie Flower', cursive;
+        }
+    </style>
+</head>
+
+<body class="bg-success" style="background-image: url(1.jpg); background-repeat: repeat; background-position: center;">
+    <center>
+        <h2 class=" t1 text-light bg-dark p-2  mt-4 mb-4 text-uppercase" style="display: inline-block;">Search your
+            favourite
+            food</h2>
+    </center>
+
+    <div class="input-group mb-3 w-50 mx-auto d-flex flex-column flex-xl-row flex-lg-row flex-md-row ">
+        <input id="food-name" type="text" class="t1 form-control fs-5 w-100 mb-2" placeholder="Enter food name"
+            aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="searchFood()" class="t1 btn fw-bold btn-outline-secondary text-danger fs-5  btn-warning "
+            type="button" id="button-addon2">Click</button>
+    </div>
+
+    <!-- view food -->
+    <section class="view-food w-75 mx-auto pt-5">
+        <div id="add-food" class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+
+    </section>
+
+    <!-- server error -->
+    <section id="warn">
+        <h1 class="text-white bg-danger text-center">Please try again after 5 min!!!!!!!!!!</h1>
+    </section>
+
+    <!-- particular food  -->
+    <section>
+        <!-- Scrollable modal -->
+
+        <!-- Modal -->
+        <div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div id="food-modal" class="modal-dialog">
+
+            </div>
+        </div>
+
+    </section>
+
+    <div>
+        <p></p>
+    </div>
+
+
+    <script src="mealdb.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
