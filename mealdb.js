@@ -19,6 +19,12 @@ const searchFood = () => {
     }
 
     foodName.value = '';
+    toggleTpinner('block');
+
+};
+
+const toggleTpinner = (data) => {
+    document.getElementById('spin').style.display = data;
 
 };
 
@@ -37,6 +43,7 @@ const loadFood = names => {
         <h1 class="text-white bg-danger"
         >No results found</h1>
         `;
+        toggleTpinner('none');
     }
 
     for (const name of names) {
@@ -55,6 +62,7 @@ const loadFood = names => {
         div1.appendChild(div);
 
     }
+    toggleTpinner('none');
 
 };
 
@@ -64,11 +72,8 @@ const openFoodDetails = async id => {
 
     res = await fetch(url1);
     data = await res.json();
-    loadall(data.meals)
+    loadall(data.meals);
 
-    // fetch(url1)
-    //     .then(res => res.json())
-    //     .then(data => loadall(data.meals));
 
 };
 const loadall = name => {
@@ -88,7 +93,7 @@ const loadall = name => {
         <p class="fs-5"><span class="fw-bold">Area: </span>${name[0].strArea}</p>
         
         <p class="fs-5 fw-bold">Ingridients: </p>
-        <ul id="modalBody">  </ul>
+        <ul id="modalBody"> </ul>
         
          <p class="fs-5"> <span class="fw-bold">Description: </span> ${name[0].strInstructions}</p>
     </div>
@@ -241,9 +246,6 @@ const loadall = name => {
         }
     }
 
-
-
-
     // for (let i = 1; i < 10; i++) {
     //     const str = `strIngredient${i}`;
     //     const str1 = `strMeasure${i}`;
@@ -261,7 +263,5 @@ const loadall = name => {
 
     // }
 
-
-
-
 };
+
